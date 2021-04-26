@@ -1,6 +1,6 @@
 # Introduce
 
-The libstacktrace is a c library that provides a simple API to output the crash call stack to **STDERR** when process crash.
+The libstacktrace is a c library that provides a simple API to output the crash call stack to **STDERR** when the process crash.
 
 
 ## Build
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
 ## Example
 
-Examples of use are provided in **example.c** of the repository, which make a null pointer access and the process crashes with the following output:
+Examples of use are provided in **example.c** of the repository, which makes null pointer access, and the process crashes with the following output:
 
 ```shell
 [root@localhost libstacktrace]# ./example
@@ -43,7 +43,7 @@ Examples of use are provided in **example.c** of the repository, which make a nu
 Segmentation fault
 ```
 
-If **CCFLAGS** is add **-g** flag, more detail information will be output:
+If **CCFLAGS** is added **-g** flag, more detailed information will be output:
 
 ```shell
 [root@localhost libstacktrace]# ./example
@@ -62,7 +62,7 @@ Segmentation fault
 
 The libstacktrace dependence on **libbfd** (Binary File Descriptor library). 
 
-bfd build elf sections data, find the file name, function name and source line where the stack pointer is located based on the elf sections data.
+bfd build elf sections data, find the file name, function name, and source line where the stack pointer is located based on the elf sections data.
 
 bfd is provided by the **binutils** package, which can be installed in CentOS distributions with the following command:
 

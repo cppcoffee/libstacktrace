@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Install dependencies
-      run: sudo apt-get install -y libbfd-dev libiberty-dev && dpkg -L libbfd-dev
+      run: sudo apt-get install -y libbfd-dev libiberty-dev
 
     - name: Build
       run: make

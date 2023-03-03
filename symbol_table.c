@@ -63,16 +63,16 @@ bfd_boolean symbol_table_find(symbol_table_t *table, void *addr, frame_record_t 
     }
 
     for (sect = abfd->sections; sect != NULL; sect = sect->next) {
-        if ((bfd_get_section_flags(abfd, sect) & SEC_ALLOC) == 0) {
+        if ((bfd_section_flags(sect) & SEC_ALLOC) == 0) {
             continue;
         }
 
-        vma = bfd_get_section_vma(abfd, sect);
+        vma = bfd_section_vma(sect);
         if (pc < vma) {
             continue;
         }
 
-        size = bfd_get_section_size(sect);
+        size = bfd_section_size(sect);
         if (pc >= vma + size) {
             continue;
         }
